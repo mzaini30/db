@@ -1,11 +1,5 @@
 <?php
-
-$host = 'localhost';
-$username = 'root';
-$password = 'kucing';
-$database = 'database';
-
-$db = new PDO("mysql:host=" . $host . ";dbname=" . $database, $username, $password);
+$db = new PDO("sqlite:db.sqlite");
 header('Access-Control-Allow-Methods: GET, POST');
 header('Access-Control-Allow-Origin: *');
 function olah($sql, $db){
