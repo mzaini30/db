@@ -5,7 +5,7 @@
 ## Download
 
 ```bash
-npx degit mzaini30/db
+npx degit mzaini30/db -f
 ```
 
 ## Membuat Table Baru
