@@ -28,12 +28,11 @@
 	<?php 
 		if ($_POST) {
 			$kolom = array_filter(explode(', ', $_POST['kolom']));
-			$teks = "CREATE TABLE `database_" . $_POST['tabel'] . "` ( `id` INT NOT NULL AUTO_INCREMENT , ";
+			$teks = "create table \"database_" . $_POST['tabel'] . "\" ( \"id\" INTEGER Primary Key";
 			foreach ($kolom as $x) {
-				$teks .= "`" . $x . "` TEXT NULL , ";
+				$teks .= ", \"" . $x . "\" TEXT";
 			}
-			$teks .= "PRIMARY KEY (`id`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_general_ci; ";
-			// $teks = "CREATE TABLE 'database_" . $_POST['tabel'] . "' ( 'id' INT NOT NULL AUTO_INCREMENT , 'nama' TEXT NOT NULL , 'kelas' TEXT NOT NULL , 'sekolah' TEXT NOT NULL , PRIMARY KEY ('id')) ENGINE = InnoDB CHARSET=utf8 COLLATE utf_general_ci; ";
+			$teks .= ")";
 			// echo $teks;
 			$db->prepare($teks)->execute();
 	?>
